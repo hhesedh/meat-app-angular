@@ -7,6 +7,7 @@ import { AppComponent } from './app.component'
 import { HeaderComponent } from './header/header.component'
 import { HomeComponent } from './home/home.component'
 import { AboutComponent } from './about/about.component'
+import { FormsModule } from '@angular/forms'
 
 import { ROUTES } from './app.routes'
 
@@ -36,7 +37,7 @@ import { OrderComponent } from './order/order.component';
     ReviewsComponent,
     OrderComponent
   ],
-  imports: [BrowserModule, HttpModule, RouterModule.forRoot(ROUTES)],
+  imports: [BrowserModule, HttpModule, RouterModule.forRoot(ROUTES), FormsModule],
   providers: [RestaurantsService, ShoppingCartService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })
