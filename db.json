@@ -446,6 +446,22 @@
         }
       ],
       "id": 5
+    },
+    {
+      "name": "Fábio",
+      "email": "fabiodeoliveira07@gmail.com",
+      "emailConfirmation": "fabiodeoliveira07@gmail.com",
+      "address": "Rua dos bobos",
+      "number": "0",
+      "optionalAddress": "ap 12",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 2,
+          "menuId": "cup-cake"
+        }
+      ],
+      "id": 6
     }
   ]
 }
