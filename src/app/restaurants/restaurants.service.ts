@@ -12,11 +12,11 @@ import { MenuItem } from './../restaurant-detail/menu-item/menu-item.model'
 
 @Injectable()
 export class RestaurantsService {
-  constructor(private http: Http) {}
+  constructor(private http: Http) { }
 
-  restaurants(): Observable<Restaurant[]> {
+  restaurants(search?: string): Observable<Restaurant[]> {
     return this.http
-      .get(`${MEAT_API}/restaurants`)
+      .get(`${MEAT_API}/restaurants`, { params: { q: search } })
       .map(response => response.json())
       .catch(ErrorHandler.handleError)
   }
@@ -37,8 +37,8 @@ export class RestaurantsService {
 
   menuOfRestaurant(id: string): Observable<MenuItem[]> {
     return this.http
-    .get(`${MEAT_API}/restaurants/${id}/menu`)
-    .map(response => response.json())
-    .catch(ErrorHandler.handleError)
+      .get(`${MEAT_API}/restaurants/${id}/menu`)
+      .map(response => response.json())
+      .catch(ErrorHandler.handleError)
   }
 }
